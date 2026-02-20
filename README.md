@@ -3,7 +3,7 @@
 (проект выполнен на основании ТЗ к Тестовому заданию)
 
 ## Статус сборки
-![CI/CD Pipeline](https://github.com/ТВОЙ_ЛОГИН/auth-project/workflows/CI/CD%20Pipeline/badge.svg)
+![CI/CD Pipeline](https://github.com/DemetriusStorm/auth-project/workflows/CI/CD%20Pipeline/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.14.0-blue)
 ![Django](https://img.shields.io/badge/django-6.0.2-green)
 ![Tests](https://img.shields.io/badge/tests-14%20passed-brightgreen)
