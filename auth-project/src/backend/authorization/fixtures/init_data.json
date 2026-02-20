@@ -1,0 +1,164 @@
+[
+  {
+    "model": "authorization.role",
+    "pk": 1,
+    "fields": {
+      "name": "admin",
+      "description": "Полный доступ ко всем ресурсам",
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.role",
+    "pk": 2,
+    "fields": {
+      "name": "manager",
+      "description": "Может управлять контентом, но не системными настройками",
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.role",
+    "pk": 3,
+    "fields": {
+      "name": "user",
+      "description": "Обычный пользователь",
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.businessresource",
+    "pk": 1,
+    "fields": {
+      "name": "products",
+      "description": "Товары/продукты",
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.businessresource",
+    "pk": 2,
+    "fields": {
+      "name": "orders",
+      "description": "Заказы",
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.businessresource",
+    "pk": 3,
+    "fields": {
+      "name": "users",
+      "description": "Пользователи",
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.accessrule",
+    "pk": 1,
+    "fields": {
+      "role": 1,
+      "resource": 1,
+      "can_create": true,
+      "can_read": true,
+      "can_read_all": true,
+      "can_update": true,
+      "can_update_all": true,
+      "can_delete": true,
+      "can_delete_all": true,
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.accessrule",
+    "pk": 2,
+    "fields": {
+      "role": 1,
+      "resource": 2,
+      "can_create": true,
+      "can_read": true,
+      "can_read_all": true,
+      "can_update": true,
+      "can_update_all": true,
+      "can_delete": true,
+      "can_delete_all": true,
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.accessrule",
+    "pk": 3,
+    "fields": {
+      "role": 2,
+      "resource": 1,
+      "can_create": true,
+      "can_read": true,
+      "can_read_all": true,
+      "can_update": true,
+      "can_update_all": false,
+      "can_delete": true,
+      "can_delete_all": false,
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.accessrule",
+    "pk": 4,
+    "fields": {
+      "role": 2,
+      "resource": 2,
+      "can_create": true,
+      "can_read": true,
+      "can_read_all": true,
+      "can_update": true,
+      "can_update_all": false,
+      "can_delete": false,
+      "can_delete_all": false,
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.accessrule",
+    "pk": 5,
+    "fields": {
+      "role": 3,
+      "resource": 1,
+      "can_create": true,
+      "can_read": true,
+      "can_read_all": false,
+      "can_update": true,
+      "can_update_all": false,
+      "can_delete": true,
+      "can_delete_all": false,
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  },
+  {
+    "model": "authorization.accessrule",
+    "pk": 6,
+    "fields": {
+      "role": 3,
+      "resource": 2,
+      "can_create": true,
+      "can_read": true,
+      "can_read_all": false,
+      "can_update": false,
+      "can_update_all": false,
+      "can_delete": false,
+      "can_delete_all": false,
+      "created_at": "2026-02-20T00:00:00Z",
+      "updated_at": "2026-02-20T00:00:00Z"
+    }
+  }
+]
