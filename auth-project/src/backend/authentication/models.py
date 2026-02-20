@@ -85,7 +85,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def soft_delete(self):
         """
-        Мягкое удаление пользователя
+        "Мягкое" удаление пользователя
         """
         self.is_active = False
         self.deleted_at = timezone.now()
