@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.14'
+
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+
+    - name: Install dependencies
+      run: poetry install --no-interaction
+
+    - name: Run migrations
+      run: |
+        cd src/backend
+        poetry run python manage.py migrate
+
+    - name: Load fixtures
+      run: |
+        cd src/backend
+        poetry run python manage.py loaddata authorization/fixtures/init_data.json
+
+    - name: Run tests
+      run: |
+        cd src/backend
+        poetry run pytest ../../tests -v
+
+    - name: Run tests with coverage
+      run: |
+        cd src/backend
+        poetry run pytest ../../tests --cov=authentication --cov=authorization --cov=mock_business --cov-report=xml
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        fail_ci_if_error: false
